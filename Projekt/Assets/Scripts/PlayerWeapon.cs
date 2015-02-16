@@ -23,6 +23,9 @@ public class PlayerWeapon : MonoBehaviour
     private const float inactiveAlpha = 0.1f;
     private const float fadeSpeed = 3;
     private float targetAlpha = inactiveAlpha;
+    [SerializeField]
+    private GameObject _projectile;
+    public GameObject projectile { get { return _projectile; } }
 
 
     void Awake()
