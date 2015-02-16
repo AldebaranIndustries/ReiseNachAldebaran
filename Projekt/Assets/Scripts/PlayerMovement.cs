@@ -50,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        var mask = ~LayerMask.NameToLayer("Player");
+        string[] ignoredLayers = { "Player", "Weapon" };
+        var mask = ~LayerMask.GetMask(ignoredLayers);
         //Hier findet ein impliziter bool-Cast des Ergebnisses statt, der über != null läuft.
         return Physics2D.CircleCast(transform.position, c.radius, -Vector2.up, 0.1f, mask);
     }
