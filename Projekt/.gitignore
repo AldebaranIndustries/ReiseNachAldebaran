@@ -17,5 +17,6 @@
 sysinfo.txt
 
 # UnityVS
+UnityVS.*
 Assets/UnityVS/
 Assets/UnityVS.meta
