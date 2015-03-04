@@ -3,6 +3,13 @@ using System.Collections;
 
 public class PlayerWeaponSpawner : MonoBehaviour
 {
+	
+	[SerializeField]
+	public float reloadSeconds = 1f;
+
+	private float lastShot = 0f;
+
+
 	void Awake()
     {
 	
@@ -10,8 +17,10 @@ public class PlayerWeaponSpawner : MonoBehaviour
 
 	void Update()
     {
-	    if(Input.GetButtonDown("Fire1"))
+		lastShot += Time.deltaTime;
+		if(lastShot > reloadSeconds && Input.GetButtonDown("Fire1"))
         {
+			lastShot = 0;
             Instantiate(PlayerWeapon.currentWeapon.projectile, transform.position, Quaternion.identity);
         }
 	}

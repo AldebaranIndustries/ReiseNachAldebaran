@@ -5,7 +5,7 @@ public class WeaponBanhammer : MonoBehaviour
 {
     [SerializeField]
     private float startSpeed = 10;
-    [SerializeField]
+	[SerializeField]
     private int collisionsLeft = 4;
     [SerializeField]
     private float aliveTime = 8;
